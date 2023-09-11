@@ -447,6 +447,10 @@ nav{
     right: 24px;
 }
 
+.wishList svg {
+    cursor: pointer;
+}
+
 
 
 .scrolling-wrapper {
