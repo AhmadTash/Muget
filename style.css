@@ -1,17 +1,15 @@
-*{
-    font-family: 'Dashiell Text';
-    color: white;
-    overflow-x: hidden;
+* {
+  font-family: "Dashiell Text";
+  color: white;
+  overflow-x: hidden;
+  user-select: none
 }
 
-html {
-    height: 100%;
-}
 
 
 body {
-    height: 100%;
-    background: #FCF9F4 !important;
+  
+  background: #fcf9f4 !important;
 }
 
 /* 
@@ -24,265 +22,379 @@ body::before {
     height: 100vh;
     background: #072952;
     z-index: -1; /* Ensure it's behind other content */
- 
-   
 
 header {
-    overflow: hidden;
-    background: transparent;
-    margin-top: 40px;
+  overflow: hidden;
+  background: transparent;
+  margin-top: 40px;
+  padding: 0;
 }
 
-nav{
-    padding-top: 0!important;
-    }
+/* .navbar {
+  padding: 0 !important;
+} */
+
+nav {
+  padding-top: 0 !important;
+}
 
 #mynav-container {
-    margin-right: 5rem!important;
-    margin-left: 5rem!important;
+  margin-right: 138px !important;
+  margin-left: 5rem !important;
 }
 
+.navbar-brand a img {
+  width: 214px;
+}
+
+
+
 .fullScreen-Section {
-    height: 100%;
-    overflow-y: hidden;
-    background: url("images/Web 1920 – 8.png");
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-    background-size:cover;
+  height: 100vh;
+  overflow-y: hidden;
+  background: url("images/Web 1920 – 8.png");
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #first-Section {
-    height: 100%;
+  height: 100%;
 }
 
 .menu-Button {
-    font-size: 35px;
-    line-height: 44px;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
+  font-size: 35px;
+  line-height: 44px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
 .navRightMenu {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.navRightMenu svg {
+  cursor: pointer;
 }
 
 #firstSec-inner {
-    margin-top: 11.3%;
+  margin-top: 6%;
 }
 
 #firstSection-mainText {
-    font-size: 50px;
-    line-height: 62px;
-    margin-bottom: 19.5%;
+  font-size: 50px;
+  line-height: 62px;
+  margin-bottom: 17%;
 }
 
 #firstSection-p {
-    font-size: 30px;
-    line-height: 38px;
-    width: 773px;
+  font-size: 30px;
+  line-height: 38px;
+  width: 773px;
 }
 
 .navbar-brand {
-    margin-right: 0 !important;
-    margin-left: 62px;
+  margin-right: 0 !important;
+  margin-left: 113px;
 }
 
 .myBtn {
-    display: flex !important;
-    align-items: center !important;
-    font-size: 20px !important;
-    height: 55px;
-    border-radius: 0 !important;
-    border: 1px solid #dfab4e !important;
-    padding: 0 34px !important;
-    width: fit-content !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 20px !important;
+  height: 55px;
+  border-radius: 0 !important;
+  border: 1px solid #dfab4e !important;
+  padding: 0 34px !important;
+  width: fit-content !important;
 }
 
 #firstSec-inner .myBtn {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .exploreSec .myBtn {
-    margin-top: 30px;
+  margin-top: 30px;
 }
-.prod-addtocart .myBtn {
-    margin-bottom: 50px;
+.prod-addtocart {
+  margin-bottom: 50px;
 }
 
 .bag-Icon {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 #firstSection-button {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    height: 55px;
-    padding: 0 34px;
-    margin-top: 27px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  height: 55px;
+  padding: 0 34px;
+  margin-top: 27px;
+}
+
+.wishList-container{
+  display: none;
+  width: 30.21%;
+  height: 100%;
+  position: absolute;
+  background: white;
+  right: 0;
+  top: 0;
+}
+
+.wishList-cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.wishList-container * {
+  color: #1a1a1a;
+}
+
+.wishList-container-prod .card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 32px;
+  cursor: pointer;
+}
+
+.wishList-prod-left-container {
+  display: flex;
+}
+
+.wishList-prod-left-innerContainer {
+  margin: auto;
+  margin-left: 32px;
+}
+
+.wishList-container-prod .addToCart {
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #DFAB4E;
+}
+
+.wishList-container-prod .addToCart:hover{
+  background: #DFAB4E;
+}
+
+
+
+.wishList-container-prod:hover .addToCart  {
+  background: #DFAB4E;
+
+}
+
+.wishList-prodImg {
+  width: 60px;
+  align-self: center;
+}
+
+.wishList-container .card-title, .wishList-container .card-price {
+  font-size: 25px;
+}
+
+.wishList-container-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.wishList-innerContainer {
+  padding: 50px 40px;
+}
+
+.titleAndClose{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  margin-bottom: 24px;
+  max-width: 93%;
+}
+
+.titleAndClose svg {
+  cursor: pointer;
 }
 
 #firstSection-slider {
-    width: 210px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 67px;
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 67px;
 }
 
 .slider-comp {
-    width: 34px;
-    background: #CDC2B2;
-    height: 4px;
-    cursor: pointer;
+  width: 34px;
+  background: #cdc2b2;
+  height: 4px;
+  cursor: pointer;
 }
 .slider-comp:hover {
-    background: #f17e5c;
+  background: #f17e5c;
+}
+
+.active-slider{
+  background: #f17e5c;
 }
 
 .second-Section {
-    background: #FCF9F4 !important;
-    max-width: 1920px;
-    margin: auto;
+  background: #fcf9f4 !important;
+  max-width: 1920px;
+  margin: auto;
+}
+
+.second-Section .wishList{
+  position: relative;
+  top: 86px;
+  right: -372px;
 }
 
 .mysecond-container {
-    height: 100%;
+  height: 100%;
 }
 
-.mysecond-container .row{
-    height: 100%;
-}
-
-.mysecond-container .row .col {
-    height: 100%;
-}
-
-#secondSecProdDetails{
-    /* margin-top:5.5% ; */
+.mysecond-container .row {
+  height: 100%;
 }
 
 .mysecond-container .row .col {
-    padding: 0;
+  height: 100%;
+}
+
+.secondSecProdDetails {
+  background: url("images/New folder/Mask\ Group\ 2.png") 2% 100% no-repeat, url("images/New folder/Mask\ Group\ 3.png") 89% 100% no-repeat;
+}
+
+.mysecond-container .row .col {
+  padding: 0;
 }
 
 .fifthSection-innerContainer .myBtn {
-    margin-top: 3px;
-    margin-right: 8px;
-    padding: 0px 24px !important;
-    height: 45px;
+  margin-top: 3px;
+  margin-right: 8px;
+  padding: 0px 24px !important;
+  height: 45px;
 }
 
-
-.second-Section-rightImg{
-    object-fit: cover;
+.second-Section-rightImg {
+  object-fit: cover;
 }
 
-.first-selected-prod{
-    position: relative;
-    top: -854px;
-    left: 214px;
+.first-selected-prod {
+  position: relative;
+  top: -854px;
+  left: 214px;
 }
 
-.first-unselected-prod{
-    position: relative;
-    top: -885px;
-    left: 138px;
-    opacity: 0;
+.first-unselected-prod {
+  position: relative;
+  top: -885px;
+  left: 138px;
+  opacity: 0;
 }
 
-.second-selected-prod{
-    opacity: 0;
-    position: relative;
-    top: -629px;
-    left: 341px;
+.second-selected-prod {
+  opacity: 0;
+  position: relative;
+  top: -629px;
+  left: 341px;
 }
 
-.second-unselected-prod{
-    position: relative;
-    top: -627px;
-    left: 274px;
+.second-unselected-prod {
+  position: relative;
+  top: -627px;
+  left: 274px;
 }
 
-.third-selected-prod{
-    opacity: 0;
-    position: relative;
-    top: -444px;
-    left: 55px;
+.carousel-inner .mycard .card-body {
+  cursor: pointer;
 }
 
-.third-unselected-prod{
-    position: relative;
-    top: -445px;
-    left: -14px;
+.third-selected-prod {
+  opacity: 0;
+  position: relative;
+  top: -444px;
+  left: 55px;
 }
 
-.fourth-selected-prod{
-    opacity: 0;
-    position: relative;
-    top: -226px;
-    left: 326px;
+.third-unselected-prod {
+  position: relative;
+  top: -445px;
+  left: -14px;
 }
 
-.fourth-unselected-prod{
-    position: relative;
-    top: -222px;
-    left: 262px;
+.fourth-selected-prod {
+  opacity: 0;
+  position: relative;
+  top: -226px;
+  left: 326px;
 }
 
-.firstOption{
-    background: url("images/onHover/Group\ 195.png");
+.fourth-unselected-prod {
+  position: relative;
+  top: -222px;
+  left: 262px;
+}
+
+.firstOption {
+  background: url("images/onHover/Group\ 195.png");
+}
+
+.prod-name{
+  cursor: pointer;
 }
 
 .imgcol {
-    max-height: 1080px;
-    overflow-y: hidden;
+  max-height: 1080px;
+  overflow-y: hidden;
 }
 
 .imgcol svg {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 .second-Section {
-    height: 1080px;
+  height: 1080px;
 }
 
-
 .second-Section * {
-    color: #1A1A1A;
+  color: #1a1a1a;
 }
 
 .prod-img {
-    margin-top: 223px;
-    margin-bottom: 121px;
-    width: 333px;
-    height: 267px;
+  margin-top: 223px;
+  margin-bottom: 121px;
+  height: 267px;
 }
 
 .prod-name {
-    font-family: "Dashiell Text" !important;
-    font-weight: 700;
-    font-size: 30px;
-     margin-bottom: 25px; 
-
+  font-family: "Dashiell Text" !important;
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 25px;
 }
 
 .prod-p {
-    font-size: 25px;
-    width: 675px;
-    margin-bottom: 22px;
-    color: #817F7F;
+  font-size: 25px;
+  width: 675px;
+  margin-bottom: 22px;
+  color: #817f7f;
 }
 
 .secondSection-slider {
-    width: 246px;
-    display: flex;
-    justify-content: space-between;
-    /* margin-bottom: 5.74%; */
-
+  width: 246px;
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 5.74%; */
 }
 
 /* .prod-slider {
@@ -291,86 +403,89 @@ nav{
 } */
 
 .prod-price {
-    font-size: 25px;
-    margin-bottom: 13px;
+  font-size: 25px;
+}
+
+.second-Section .prod-price {
+  margin-bottom: 19px;
+
 }
 
 .prod-addtocart {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #third-Section {
-    height: 691px;
-    background: url(images/Mask\ Group\ 20.png);
+  height: 691px;
+  background: url(images/Mask\ Group\ 20.png);
 }
 
 .leftFlowers {
-    display: none;
-    top: 1800px;
-    left: 10px;
+  display: none;
+  top: 1800px;
+  left: 10px;
 }
 
 .rightFlowers {
-    display: none;
-    top: 1794px;
-    left: 662px;
+  display: none;
+  top: 1794px;
+  left: 662px;
 }
 
 .thirdSection-innerContainer {
-    width: 530px;
-    height: 100%;
-    margin-right: 145px;
+  width: 530px;
+  height: 100%;
+  margin-right: 145px;
 }
 
 .third-section-title {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 .third-section-p {
-    font-size: 25px;
-    margin-top: 30px;
-    margin-bottom: 21px;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 21px;
 }
 
 #fourth-Section {
-    height: 691px;
-    background: url(images/Mask\ Group\ 21.png);
+  height: 691px;
+  background: url(images/Mask\ Group\ 21.png);
 }
 
 #fourth-Section * {
-    color: #1A1A1A;
+  color: #1a1a1a;
 }
 
 .fourthSection-innerContainer {
-    width: 530px;
-    height: 100%;
-    margin-left: 145px;
+  width: 530px;
+  height: 100%;
+  margin-left: 145px;
 }
 
 #fifth-Section {
-    height: 883px;
-    background: #FCF9F4;
+  height: 883px;
+  background: #fcf9f4;
 }
 
-.fifthSectionTitle{
-    font-size: 45px;
-    color: #1A1A1A;
-    margin-left: 145px;
-    margin-bottom: 27px;
+.fifthSectionTitle {
+  font-size: 45px;
+  color: #1a1a1a;
+  margin-left: 145px;
+  margin-bottom: 27px;
 }
 
 .fifthSection-innerContainer {
-    width: 100%;
-    height: 100%;
-    margin-top: 85px;
+  width: 100%;
+  height: 100%;
+  margin-top: 85px;
 }
 
-
-
-.carousel-control-prev, .carousel-control-next {
-    width: 145px !important;
-    height: fit-content;
-    margin: auto;
+.carousel-control-prev,
+.carousel-control-next {
+  width: 145px !important;
+  height: fit-content;
+  margin: auto;
 }
 
 /* .carousel-inner .active{
@@ -378,62 +493,62 @@ nav{
 } */
 
 .carousel {
-    width: 100%;
+  width: 100%;
 }
 
 .card * {
-    color: #1A1A1A;
+  color: #1a1a1a;
 }
 .mycard {
-    width: 398px !important;
+  width: 398px !important;
 }
 
 .mycard .cardImgCont img {
-    width: 100%;
-    height: 477px;
+  width: 100%;
+  height: 477px;
 }
 
-.card-title {
-    font-size: 25px;
-    margin-top: 30px;
+.carousel-item .card-title {
+  font-size: 25px;
+  margin-top: 30px;
+  font-weight: 600;
 }
 
-.card-price {
-    font-size: 25px;
-    margin-top: 6px;
+.carousel-item .card-price {
+  font-size: 25px;
+  margin-top: 6px;
 }
 
 .currency {
-    font-size: 20px;
+  font-size: 25px;
 }
 
 .mycard .card-body {
-    margin-left: 12px;
-    padding-top: 4px;
+  margin-left: 12px;
+  padding-top: 4px;
+  padding-bottom: 25px;
 }
-
 
 .cardGap {
-    gap: 11.3px;
+  gap: 11.3px;
 }
 
-
 .pic1 {
-    position: absolute;
-    transition: opacity 0.3s; /* Specify the property to transition and the duration */
+  position: absolute;
+  transition: opacity 0.3s; /* Specify the property to transition and the duration */
 }
 
 .pic2 {
-    opacity: 0;
-    transition: opacity 0.3s; /* Specify the property to transition and the duration */
+  opacity: 0;
+  transition: opacity 0.3s; /* Specify the property to transition and the duration */
 }
 
 .cardImgCont:hover .pic1 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .cardImgCont:hover .pic2 {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* .wishList img {
@@ -442,155 +557,150 @@ nav{
     right: 24px;
 } */
 .wishList {
-    position: absolute;
-    top: 24px;
-    right: 24px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 
 .wishList svg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
-
 .scrolling-wrapper {
-    display: none;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -ms-overflow-style: none;
+  display: none;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none;
   scrollbar-width: none;
-    .card {
-      flex: 0 0 auto;
-    }
+  .card {
+    flex: 0 0 auto;
   }
+}
 
 .scrolling-wrapper .mycard:first-child {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .scrolling-wrapper .mycard:last-child {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
-  .scrolling-wrapper::-webkit-scrollbar {
-    display: none;
-  }
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
 
-
-  #sixth-Section {
-    height: 691px;
-    background: url(images/Mask\ Group\ 23.png);
+#sixth-Section {
+  height: 691px;
+  background: url(images/Mask\ Group\ 23.png);
 }
 
 .seventh-section .categories .card {
-    width: 25%;
-    align-items: center;
-    justify-content: end;
+  width: 25%;
+  align-items: center;
+  justify-content: end;
+  border-radius: 0;
 }
 
 .seventh-section .categories .card .myBtn {
-    margin-bottom: 39px;
-    margin-top: 25px;
-    padding: 0 20px !important;
+  margin-bottom: 39px;
+  margin-top: 25px;
+  padding: 0 20px !important;
 }
-
 
 .seventhSection-card-title {
-    font-size: 25px;
-    
+  font-size: 25px;
 }
 
-.active-Heart{
-    fill: #dfab4e;
-    stroke: none;
+.active-Heart {
+  fill: #dfab4e;
+  stroke: none;
 }
-
-
 
 footer {
-    height: 650px;
-    background: #fcf9f4;
-    background-image: url("images/New folder/Group 109.png");
-    background-repeat:no-repeat ;
-    background-position-y: bottom;
-    background-position-x: center;
-    background-size: contain;
-
+  height: 650px;
+  background: #fcf9f4;
+  background-image: url("images/new folder/Group\ 109.png");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: center;
+  background-size: contain;
 }
 
 footer * {
-    color: #1A1A1A;
+  color: #1a1a1a;
 }
 
-
-
 .footerMenu a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #1A1A1A;
+  font-size: 20px;
+  text-decoration: none;
+  color: #1a1a1a;
 }
 
 .subscribe {
-    width: 578px;
+  width: 578px;
 }
 
 .subscribe .btn {
-    justify-content: center;
-    background: white;
+  justify-content: center;
+  background: white;
 }
 
 .subscribe input {
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid black;
-    width: 100%;
-    font-size: 25px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+  width: 100%;
+  font-size: 20px;
 }
 
 .subscribe input:focus {
-    outline: none;
+  outline: none;
 }
 
 .underFooter {
-    background: #F4C1B4;
-    height: 52px;
+  background: #f4c1b4;
+  height: 52px;
 }
 
 .underFooter * {
-    color: #1A1A1A;
-    text-decoration: none;
-    font-size: 15px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 15px;
 }
 
 .underFooter-Menu {
-    margin-left: 100px;
+  margin-left: 100px;
 }
 
 .underFooter-Copyright {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
-
-
-
-#third-Section, #fourth-Section, #sixth-Section {
-    background-repeat: no-repeat;
-    background-size: cover;
+#third-Section,
+#fourth-Section,
+#sixth-Section {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-
-@media(max-width: 1920px) {
-#first-Section {
-background-size: auto;
+.removeCardBtn {
+  font-size: 11px;
+  position: absolute;
+  text-decoration: underline;
+  right: 21px;
+  bottom: 9px;
 }
+
+@media (max-width: 1920px) {
+  #first-Section {
+    background-size: auto;
+  }
 }
 
-
-@media(max-height: 1080px) {
-    #firstSec-inner {
-        margin-top: 0;
-    }
+@media (max-height: 1080px) {
+  #firstSec-inner {
+    margin-top: 0;
+  }
 }
 
 /* @media(max-height:1100px) {
@@ -600,8 +710,14 @@ background-size: auto;
 
 } */
 
-@media(max-height:900px) {
-    .prod-img{
-        margin-top: 0 !important;
-    }
+@media (max-height: 900px) {
+  .prod-img {
+    margin-top: 0 !important;
+  }
 }
+
+
+
+
+
+

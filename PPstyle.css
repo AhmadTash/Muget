@@ -1,0 +1,174 @@
+* {
+    font-family: "Dashiell Text";
+    color: white;
+    overflow-x: hidden;
+    user-select: none;
+    color:#1A1A1A
+  }
+
+  .prodPage-container {
+    margin-left: 15px !important;
+    max-width: 92.81% !important;
+  }
+
+  
+  .productPage-navbar .menu-Button {
+    color: black;
+  }
+
+  .prod-Path {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 42px;
+  }
+
+  .prod-Path *{
+    font-size: 15px;
+  }
+
+  .prod-page-title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
+    margin-bottom: 32px;
+  }
+
+  .prod-page-p {
+    font-size: 25px;
+    color: #817F7F;
+    margin-bottom: 22px;
+    text-align: justify;
+    line-height: 31px;
+  }
+
+  .product-Section {
+    margin-top: 75px;
+  }
+
+  .product-Section hr {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+
+  .prod-page-quantity-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .prod-size-container {
+    margin-bottom: 26px;
+  }
+
+  .prodPage-addToCart {
+    margin-bottom: 40px;
+  }
+
+  .quantityText, .prodSizeText {
+    font-size: 25px;
+  }
+
+  .quantity-counter, .size-pick {
+    display: flex;
+    font-size: 25px;
+    gap: 25px;
+  }
+
+  .prod-size-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .size-pick-Btn {
+    margin-top: -2.1px;
+  }
+
+  .prodPage-addToCart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 25px;
+    background: #DFAB4E;
+  }
+
+  .prodPage-addToCart .addToCartText {
+    font-size: 20px;
+  }
+
+
+  .prod-details {
+    font-size: 25px; 
+  }
+
+  .prod-details *{
+    line-height: 31px;
+  }
+
+  .prod-details-title {
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .prod-details-p {
+    color: #817F7F;
+    text-align: justify;
+  }
+
+
+  .prod-imgs-col {
+    height: 880px;
+    -ms-overflow-style: none;  
+  scrollbar-width: none; 
+ padding: 0 !important;
+
+  }
+
+  .prod-imgs-col * {
+    padding: 0 !important;
+
+  }
+
+  .prod-imgs-col::-webkit-scrollbar {
+    display: none;
+  }
+
+  .prod-imgs-col .col{
+    padding: 0 ;
+  }
+  .prod-imgs-col .row {
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+
+  .prodPage-container .prod-imgs-col img{
+    width: 100%;
+  }
+
+  .may-like-section {
+    margin-top: 62px;
+    margin-bottom: 142px;
+  }
+
+  .may-like-section .fifthSection-innerContainer {
+    margin-top: 0 ;
+  }
+  
+
+  .may-like-section .fifthSectionTitle {
+    margin-bottom: 31px;
+  }
+
+  .discover-section {
+    font-size: 45px;
+
+    height: 691px;
+  background: url(images/Mask\ Group\ 21.png);
+  background-size: cover;
+  }
+
+  hr {
+    color: rgb(112, 112, 112,0.4) !important;
+    opacity: 1 !important;
+  }
+
