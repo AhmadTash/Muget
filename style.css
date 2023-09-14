@@ -127,6 +127,15 @@ nav {
   margin-right: 16px;
 }
 
+.prod-addtocart:hover {
+  background: #DFAB4E !important;
+}
+
+.myBtn:hover {
+  background: #DFAB4E !important;
+  color: #1a1a1a !important;
+}
+
 #firstSection-button {
   display: flex;
   align-items: center;
