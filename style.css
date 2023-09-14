@@ -127,15 +127,6 @@ nav {
   margin-right: 16px;
 }
 
-.prod-addtocart:hover {
-  background: #DFAB4E !important;
-}
-
-.myBtn:hover {
-  background: #DFAB4E !important;
-  color: #1a1a1a !important;
-}
-
 #firstSection-button {
   display: flex;
   align-items: center;
@@ -322,6 +313,20 @@ nav {
   position: relative;
   top: -627px;
   left: 274px;
+}
+
+.prod-addtocart:hover {
+  background: #DFAB4E !important;
+}
+
+.myBtn:hover {
+  background: #DFAB4E !important;
+  color: #1a1a1a !important;
+}
+
+.mycard {
+  border-radius: 0 !important;
+    border: 0 !important;
 }
 
 .carousel-inner .mycard .card-body {
@@ -608,6 +613,7 @@ nav {
   align-items: center;
   justify-content: end;
   border-radius: 0;
+  border-bottom: 0;
 }
 
 .seventh-section .categories .card .myBtn {
