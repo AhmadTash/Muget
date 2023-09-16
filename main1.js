@@ -15,6 +15,13 @@ let cardsSliderSection = document.querySelectorAll(".carousel-item")
 let wishListContainer = document.querySelector(".wishList-container")
 let wishListContainerShowBtn = document.querySelector(".wishList-containerShowBtn")
 let wishListContainerHideBtn = document.querySelector(".wishList-containerHideBtn")
+let shoppingCartContainer = document.querySelector(".shoppingCart-container")
+let shoppingCartContainerShowBtn = document.querySelector(".shoppingCart-containerShowBtn")
+let shoppingCartContainerHideBtn = document.querySelector(".shoppingCart-containerHideBtn")
+let unselected = document.querySelectorAll(".imgUnselectedProd")
+let selected = document.querySelectorAll(".imgSelectedProd")
+let onHoverCard = document.querySelectorAll(".onHoverCard")
+
 
 wishListContainerShowBtn.addEventListener("click", () => {
     wishListContainer.style.display = "block"
@@ -23,6 +30,59 @@ wishListContainerShowBtn.addEventListener("click", () => {
 wishListContainerHideBtn.addEventListener("click", () => {
     wishListContainer.style.display = "none"
 })
+
+shoppingCartContainerShowBtn.addEventListener("click", () => {
+    shoppingCartContainer.style.display = "flex"
+})
+
+shoppingCartContainerHideBtn.addEventListener("click", () => {
+    shoppingCartContainer.style.display = "none"
+})
+
+
+unselected.forEach((icon, index) => {
+    icon.addEventListener("mouseover", () => {
+        selected[index].style.scale = "1"
+        onHoverCard[index].style.opacity = "1"
+        if(index == 3){
+            onHoverCard[index].style.width = "609px"
+        }else {
+        onHoverCard[index].style.width = "509px"}
+        onHoverCard[index].addEventListener("mouseleave", () => {
+            selected[index].style.scale = "0.65"
+            onHoverCard[index].style.width = "1px"
+            onHoverCard[index].style.opacity = "0"
+            
+        })
+        
+    })
+
+    // icon.addEventListener("mouseleave", () => {
+    //     selected[index].style.scale = "0.65"
+    //     onHoverCard[index].style.opacity = "0"
+    //     onHoverCard[index].style.width = "1px"
+        
+    // })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let secondSecWishlist = document.querySelector(".secondSecWishList")
@@ -89,6 +149,31 @@ prodSlider.forEach(slider => {
         }
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

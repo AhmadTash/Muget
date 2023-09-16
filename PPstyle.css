@@ -89,11 +89,19 @@
     align-items: center;
     justify-content: space-between;
     padding: 11px 25px;
-    background: #DFAB4E;
+    background: #1A1A1A;
+  }
+
+  .prodPage-addToCart * {
+    color: white;
   }
 
   .prodPage-addToCart .addToCartText {
     font-size: 20px;
+  }
+
+  .prodPage-addToCart .prod-price {
+    font-weight: normal;
   }
 
 
