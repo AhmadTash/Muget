@@ -97,7 +97,7 @@ prodSlider.forEach(slider => {
                       seconcSecWishlistHeart.setAttribute("data-heart-number","5")
                       prodName[0].setAttribute("data-heart-number", "5")
                       prodImg[0].src = "images/Image 25.png"
-                      secondSecRImg[0].src = "images/Mask Group 25.png"
+                      secondSecRImg[0].src = "images/onHover/Mask Group 25.png"
                       prodName[0].innerText = "Sphere Earrings"
                       prodPrice[0].innerText = "1500 AED"
                       selectedProd.forEach(point => {
