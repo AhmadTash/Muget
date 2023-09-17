@@ -1300,6 +1300,7 @@ footer * {
 }
 
 #sixth-Section .container-fluid, #eighth-Section .container-fluid {
+    -webkit-backdrop-filter: blur(1px);
     backdrop-filter: blur(1px);
 }
 
