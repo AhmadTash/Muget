@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/rmo1elf.css");
 
 * {
-  font-family: "Dashiell Text";
+  font-family: "dashiell-text";
   color: white;
   overflow-x: hidden;
   user-select: none
@@ -684,7 +684,7 @@ margin-right: 17px;
 }
 
 .prod-name {
-  font-family: "Dashiell Text" !important;
+  font-family: "dashiell-text" !important;
   font-weight: 600;
   font-size: 30px;
   margin-bottom: 25px;
