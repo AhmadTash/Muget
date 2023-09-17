@@ -1,6 +1,5 @@
 @import url("https://use.typekit.net/rmo1elf.css");
 
-
 * {
   font-family: "Dashiell Text";
   color: white;
@@ -1052,6 +1051,17 @@ footer * {
 
 
 @media (max-width: 400px) {
+
+  .navbar {
+    width: 90%;
+    margin: auto;
+  }
+
+
+  #mynav-container{
+    padding: 0;
+
+  }
 
   header {
     margin-top: 5px;
