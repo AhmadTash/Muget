@@ -1,5 +1,5 @@
 * {
-    font-family: "Dashiell Text";
+    font-family: "dashiell-text";
     color: white;
     overflow-x: hidden;
     user-select: none;
@@ -129,7 +129,7 @@
     -ms-overflow-style: none;  
   scrollbar-width: none; 
  padding: 0 !important;
-
+ overflow-y: auto;
   }
 
   .prod-imgs-col * {
