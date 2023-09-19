@@ -11,11 +11,15 @@
 
 body {
   
-  background: #fcf9f4 !important;
+  background: #ffffff !important;
 }
 
 body * {
   overflow: hidden;
+}
+
+.splide__list {
+  overflow: visible;
 }
 
 /* 
@@ -150,6 +154,7 @@ nav {
   background: white;
   right: 0;
   top: 0;
+  z-index: 100;
 }
 
 .shoppingCart-container {
@@ -337,7 +342,7 @@ nav {
 }
 
 .second-Section {
-  background: #fcf9f4 !important;
+  background: #ffffff !important;
   max-width: 1920px;
   margin: auto;
 }
@@ -780,7 +785,7 @@ margin-right: 17px;
 
 #fifth-Section {
   height: 883px;
-  background: #fcf9f4;
+  background: #ffffff;
 }
 
 .fifthSectionTitle {
@@ -941,7 +946,7 @@ margin-right: 17px;
 
 footer {
   height: 650px;
-  background: #fcf9f4;
+  background: #ffffff;
   background-image: url("images/new folder/Group\ 109.png");
   background-repeat: no-repeat;
   background-position-y: bottom;
@@ -1029,6 +1034,9 @@ footer * {
   bottom: 9px;
 }
 
+
+
+
 @media (max-width: 1920px) {
   #first-Section {
     background-size: auto;
@@ -1053,7 +1061,7 @@ footer * {
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 
   .navbar {
     width: 90%;
@@ -1145,7 +1153,7 @@ footer * {
     margin-left: 0 ;
   }
 
-  .navbar-brand a img {
+  .navbar-brand a img, .navbar-brand svg {
     width: 140px;
   }
 
@@ -1195,7 +1203,7 @@ footer * {
   }
 
   .second-Section{
-    height: 100vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
   }
@@ -1260,16 +1268,16 @@ footer * {
 
   .thirdSection-innerContainer, .fourthSection-innerContainer{
     width: auto;
+    max-width: 530px;
+    align-items: center;
+    text-align: center;
+    margin: auto;
   }
 
   .third-section-title {
     font-size: 30px ;
   }
 
-  .thirdSection-innerContainer, .fourthSection-innerContainer {
-    align-items: center;
-    text-align: center;
-  }
 
   .thirdSection-innerContainer .myBtn, .fourthSection-innerContainer .myBtn {
         padding: 0px 21px !important;
@@ -1329,11 +1337,11 @@ footer * {
     text-align: center;
   }
 
- .carousel-item .mycard {
+  .carousel-item .mycard {
     width: 85% !important;
     max-width: 398px;
   }
-  
+
   .carousel-item .mycard .cardImgCont img {
     height: 350px !important;
   }

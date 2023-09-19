@@ -1,7 +1,36 @@
 let wishListContainer = document.querySelector(".wishList-container")
 let wishListContainerShowBtn = document.querySelector(".wishList-containerShowBtn")
 let wishListContainerHideBtn = document.querySelector(".wishList-containerHideBtn")
+let prodImgsCol = document.querySelector(".prod-imgs-col")
+let prodImgsSrcs = document.querySelectorAll(".prod-imgs-col img")
 
+
+let imgNumber = []
+
+prodImgsSrcs.forEach((img, index) => {
+  imgNumber[index] = img.src
+})
+
+console.log(imgNumber)
+
+
+if(screen.width <= 1200){
+    prodImgsCol.innerHTML = `<section id="image-carousel" class="splide" aria-label="Beautiful Images">
+    <div class="splide__track">
+          <ul class="splide__list">
+              <li class="splide__slide">
+                  <img src="${imgNumber[0]}" alt="">
+              </li>
+              <li class="splide__slide">
+                  <img src="${imgNumber[1]}" alt="">
+              </li>
+              <li class="splide__slide">
+                  <img src="${imgNumber[2]}" alt="">
+              </li>
+          </ul>
+    </div>
+  </section>`
+}
 
 
 wishListContainerShowBtn.addEventListener("click", () => {
@@ -210,7 +239,7 @@ function heartUI(productId){
 
 
 
-let prodCard = document.querySelectorAll(".carousel-inner .mycard .card-body .card-title")
+let prodCard = document.querySelectorAll(".mycard .card-body .card-title")
 prodCard.forEach(card => {
     card.addEventListener("click", () => {
         const cardNumber = parseInt(card.parentNode.getAttribute("data-heart-number"))

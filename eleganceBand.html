@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="PPstyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body class="">
@@ -23,7 +24,7 @@
                         </g>
                       </svg>
                       
-                    Menu                  
+                      <div id="menu-Text">Menu</div>                  
                       
                 </a>
             <div class="navbar-brand">
@@ -53,43 +54,44 @@
                 </a> 
             </div>
             <div class="navRightMenu"><svg xmlns="http://www.w3.org/2000/svg" width="31.849" height="31.848" viewBox="0 0 31.849 31.848">
-                <g id="Group_102" data-name="Group 102" transform="translate(1 1)">
-                  <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(0 0)">
-                    <path id="Path_19" data-name="Path 19" d="M30.664,17.582A13.082,13.082,0,1,1,17.582,4.5,13.082,13.082,0,0,1,30.664,17.582Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                    <path id="Path_20" data-name="Path 20" d="M32.088,32.088l-7.113-7.113" transform="translate(-2.654 -2.654)" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                  </g>
+              <g id="Group_102" data-name="Group 102" transform="translate(1 1)">
+                <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(0 0)">
+                  <path id="Path_19" data-name="Path 19" d="M30.664,17.582A13.082,13.082,0,1,1,17.582,4.5,13.082,13.082,0,0,1,30.664,17.582Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <path id="Path_20" data-name="Path 20" d="M32.088,32.088l-7.113-7.113" transform="translate(-2.654 -2.654)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                 </g>
-              </svg>
-              <svg class="wishList-containerShowBtn" xmlns="http://www.w3.org/2000/svg" width="38.004" height="33.505" viewBox="0 0 38.004 33.505">
-                <g id="Icon_awesome-heart" data-name="Icon awesome-heart" transform="translate(1.002 1.004)">
-                  <path id="Icon_awesome-heart-2" data-name="Icon awesome-heart" d="M32.505,4.4a9.615,9.615,0,0,0-13.12.956L18,6.785,16.615,5.358A9.615,9.615,0,0,0,3.495,4.4,10.1,10.1,0,0,0,2.8,19.02L16.4,33.068a2.2,2.2,0,0,0,3.185,0L33.195,19.02A10.09,10.09,0,0,0,32.505,4.4Z" transform="translate(0.001 -2.248)" fill="none" stroke="#1a1a1a" stroke-width="2"/>
-                </g>
-              </svg>
-    
-              
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.062" height="35.061" viewBox="0 0 35.062 35.061">
-                <defs>
-                  <clipPath id="clip-path">
-                    <path id="path2337" d="M0-682.665H35.062V-647.6H0Z" transform="translate(0 682.665)"/>
-                  </clipPath>
-                </defs>
-                <g id="shopping-bag" transform="translate(0 0)">
-                  <g id="g2331" transform="translate(0 0)">
-                    <g id="g2333">
-                      <g id="g2335" clip-path="url(#clip-path)">
-                        <g id="g2341" transform="translate(3.622 8.78)">
-                          <path id="path2343" d="M-513.8-461.4h-27.817l2.623-24.98h22.571Z" transform="translate(541.615 486.376)" fill="none" stroke="#1a1a1a" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
-                        </g>
-                        <g id="g2345" transform="translate(12.203 1.301)">
-                          <path id="path2347" d="M0-198.926v-5.442A5.328,5.328,0,0,1,5.328-209.7h0a5.328,5.328,0,0,1,5.328,5.328v5.442" transform="translate(0 209.695)" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
-                        </g>
+              </g>
+            </svg>
+            <svg class="wishList-containerShowBtn" xmlns="http://www.w3.org/2000/svg" width="38.004" height="33.505" viewBox="0 0 38.004 33.505">
+              <g id="Icon_awesome-heart" data-name="Icon awesome-heart" transform="translate(1.002 1.004)">
+                <path id="Icon_awesome-heart-2" data-name="Icon awesome-heart" d="M32.505,4.4a9.615,9.615,0,0,0-13.12.956L18,6.785,16.615,5.358A9.615,9.615,0,0,0,3.495,4.4,10.1,10.1,0,0,0,2.8,19.02L16.4,33.068a2.2,2.2,0,0,0,3.185,0L33.195,19.02A10.09,10.09,0,0,0,32.505,4.4Z" transform="translate(0.001 -2.248)" fill="none" stroke="#fff" stroke-width="2"/>
+              </g>
+            </svg>
+  
+            <div class="shoppingCart-navbarbutton">
+              <div class="navbar-itemsInCart">3</div>
+            <svg class="shoppingCart-containerShowBtn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.062" height="35.061" viewBox="0 0 35.062 35.061">
+              <defs>
+                <clipPath id="clip-path">
+                  <path id="path2337" d="M0-682.665H35.062V-647.6H0Z" transform="translate(0 682.665)"/>
+                </clipPath>
+              </defs>
+              <g id="shopping-bag" transform="translate(0 0)">
+                <g id="g2331" transform="translate(0 0)">
+                  <g id="g2333">
+                    <g id="g2335" clip-path="url(#clip-path)">
+                      <g id="g2341" transform="translate(3.622 8.78)">
+                        <path id="path2343" d="M-513.8-461.4h-27.817l2.623-24.98h22.571Z" transform="translate(541.615 486.376)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                      </g>
+                      <g id="g2345" transform="translate(12.203 1.301)">
+                        <path id="path2347" d="M0-198.926v-5.442A5.328,5.328,0,0,1,5.328-209.7h0a5.328,5.328,0,0,1,5.328,5.328v5.442" transform="translate(0 209.695)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
                       </g>
                     </g>
                   </g>
                 </g>
-              </svg>
-                        
-            </div>
+              </g>
+            </svg>
+          </div>  
+          </div>
             
               
               
@@ -119,11 +121,63 @@
     
               </div>
           </div>
+          <div class="shoppingCart-container">
+            <div class="shoppingCart-innerContainer">
+                <div class="titleAndClose">
+                  <div class="shoppingCart-container-title">Shopping Cart</div>
+                  <svg class="shoppingCart-containerHideBtn" xmlns="http://www.w3.org/2000/svg" width="15.232" height="15.232" viewBox="0 0 15.232 15.232">
+                    <g id="Group_200" data-name="Group 200" transform="translate(-1332.863 1280.737) rotate(-45)">
+                      <path id="Path_100" data-name="Path 100" d="M-3298.179,5473.859v17.54" transform="translate(5146.273 -5435)" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-width="2"/>
+                      <path id="Path_101" data-name="Path 101" d="M0,0V17.54" transform="translate(1856.864 47.629) rotate(90)" fill="none" stroke="#1a1a1a" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                  </svg>
+                  
+                </div>
+                <div class="shoppingCart-cardsContainer">
+                  <div class="shoppingCart-container-prod card" data-heart-number="0">
+                    <div class="card-body">
+                        <div class="shoppingCart-prod-left-container">
+                          <img class="shoppingCart-prodImg" src="images/Component 4 – 1.png" alt="">
+                          <div class="shoppingCart-prod-left-innerContainer">
+                            <div class="card-title">Pearl Earrings</div>
+                            <div class="shoppingCartProdQuantity">Quantity<span class="SCPQ-Subtract">-</span><span class="SCPQ-Number">2</span><span class="SCPQ-add">+</span></div>
+                          </div>
+                        </div>
+                        <div class="shoppingCart-prod-right-container">
+                        
+                          <svg class="shoppingCart-prod-menu" xmlns="http://www.w3.org/2000/svg" width="5" height="21" viewBox="0 0 5 21">
+                            <g id="Group_225" data-name="Group 225" transform="translate(-1851 -132)">
+                              <circle id="Ellipse_3" data-name="Ellipse 3" cx="2.5" cy="2.5" r="2.5" transform="translate(1851 132)" fill="#1a1a1a"/>
+                              <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.5" cy="2.5" r="2.5" transform="translate(1851 140)" fill="#1a1a1a"/>
+                              <circle id="Ellipse_5" data-name="Ellipse 5" cx="2.5" cy="2.5" r="2.5" transform="translate(1851 148)" fill="#1a1a1a"/>
+                            </g>
+                          </svg>
+                          
+                        
+    
+                        <div class="card-price">1500 AED</div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  
+                </div>
+    
+                
+    
+    
+    
+              </div>
+              <div class="shoppingCart-CheckOut mx-auto">
+                <div class="items-count">3 Items</div>
+                <div class="shoppingCart-checkOutBtn btn"><span class="shoppingCart-totalPrice">3000 AED</span><span style="font-size: 20px;"> Check Out</span></div>
+              </div>
+          </div>
         <div class="prodPage-container container">
             <div class="row justify-content-between">
 
 
-                <div class="prod-imgs-col col-7">
+                <div class="prod-imgs-col col-xl-7">
 
                     <div class="row">
                         <div class="row">
@@ -139,7 +193,7 @@
 
 
 
-                <div class="col-4">
+                <div class="col-xl-4">
                     <div class="prod-Path">
                         <div class="path-One">Home</div>
                         >
@@ -571,8 +625,12 @@
 
     
     
-
+    <script src="prodPage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="wishlist.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      new Splide( '#image-carousel' ).mount();
+    </script>
 </body>
 </html>
