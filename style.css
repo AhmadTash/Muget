@@ -1329,7 +1329,11 @@ footer * {
     text-align: center;
   }
 
-
+ .carousel-item .mycard {
+    width: 85% !important;
+    max-width: 398px;
+  }
+  
   .carousel-item .mycard .cardImgCont img {
     height: 350px !important;
   }
