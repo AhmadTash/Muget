@@ -174,9 +174,16 @@ nav {
 
 .navbar-itemsInCart {
   position: absolute;
-  top: 11px;
-  right: 14px;
   font-size: 15px;
+  top: 11px;
+  width: 100%;
+  
+  text-align: center;
+  
+}
+
+.navbar-itemsInCart {
+  cursor: pointer;
 }
 
 .shoppingCart-CheckOut .items-count {
@@ -190,9 +197,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #DFAB4E;
+  background: #DFAB4E !important;
   border-radius: 0;
   padding: 12px 22px;
+  border: 0;
 }
 
 .wishList-cardsContainer, .shoppingCart-cardsContainer {
@@ -224,7 +232,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 32px 25px 32px;
-  cursor: pointer;
+  
 }
 
 .shoppingCartProdQuantity * {
@@ -1036,6 +1044,14 @@ footer * {
 
 
 
+.SCPQ-Subtract, .SCPQ-add, .shoppingCart-prod-menu {
+ cursor: pointer;
+}
+
+
+
+
+
 
 @media (max-width: 1920px) {
   #first-Section {
@@ -1182,9 +1198,7 @@ footer * {
   }
 
   .navbar-itemsInCart {
-    top: 11px;
-    right: 8.6px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .navRightMenu {

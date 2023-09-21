@@ -50,67 +50,78 @@ const products = [
         id: 0,
         name: "Pearl Earrings",
         price: "1500 AED",
-        image: 'images/Component 4 – 1.png'
+        image: 'images/Component 4 – 1.png',
+        quantity: 0
     },
     {
         id: 1,
         name: "Elegance Band",
         price: "1500 AED",
-        image: 'images/Component 3 – 1.png'
+        image: 'images/Component 3 – 1.png',
+        quantity: 0
     },
     {
         id: 2,
         name: "Deux Pearl Earrings",
         price: "1500 AED",
-        image: 'images/Component 2 – 1.png'
+        image: 'images/Component 2 – 1.png',
+        quantity: 0
     },
     {
         id: 3,
         name: "Amavi",
         price: "1500 AED",
-        image: 'images/Component 5 – 1.png'
+        image: 'images/Component 5 – 1.png',
+        quantity: 0
     },
     {
         id: 4,
         name: "Vermeil",
         price: "1500 AED",
-        image: 'images/Component 6 – 1.png'
+        image: 'images/Component 6 – 1.png',
+        quantity: 0
     },
     {
         id: 5,
         name: "Sphere Earrings",
         price: "1500 AED",
-        image: 'images/Image 25.png'
+        image: 'images/Image 25.png',
+        quantity: 0
     },
     {
         id: 6,
         name: "Ivory",
         price: "1500 AED",
-        image: 'images/new/Image 12.png'
+        image: 'images/new/Image 12.png',
+        quantity: 0
     },
     {
         id: 7,
         name: "Swirling",
         price: "1500 AED",
-        image: 'images/new/Image 17.png'
+        image: 'images/new/Image 17.png',
+        quantity: 0
     },
     {
         id: 8,
         name: "Chain Necklace",
         price: "1500 AED",
-        image: 'images/Image 26.png'
+        image: 'images/Image 26.png',
+        quantity: 0
     },
     {
         id: 9,
         name: "Intaglio Dove Necklace",
         price: "1500 AED",
-        image: 'images/Image 27.png'
+        image: 'images/Image 27.png',
+        quantity: 0
     },
     {
         id: 10,
         name: "Braided Bracelet",
         price: "2000 AED",
-        image: 'images/Image 28.png'
+        image: 'images/Image 28.png',
+        quantity: 0
     }
 ]
 
@@ -119,9 +130,46 @@ let wishListJs = []
 let wishListItems = document.querySelector(".wishList-cardsContainer")
 
 
+
+window.addEventListener('load', () => {
+  const savedWishList = localStorage.getItem('wishlist')
+  if (savedWishList) {
+      wishListJs = JSON.parse(savedWishList);
+      updateWishListUI();
+      checkIfWishList()
+      removeItemFromWishList();
+
+  }
+})
+
+
+function checkIfWishList(){
+  const hearts = document.querySelectorAll(".wishList svg > g > path");
+  console.log(hearts)
+  
+  wishListJs.forEach(item => {
+    
+    hearts.forEach(heart => {
+      console.log(item)
+      if(parseInt(heart.getAttribute("data-heart-number")) == item.id){
+        heart.classList.add("active-Heart")
+      }
+  
+    })
+  })
+  
+}
+
+
+function saveWishListToLocalStorage() {
+  localStorage.setItem('wishlist', JSON.stringify(wishListJs))
+}
+
+
+
+
 function addToWishList(productId) {
     let product = products.find(item => item.id === productId);
-    
     if (product) {
         const existingItemIndex = wishListJs.findIndex(item => item.id === productId);
         
@@ -143,6 +191,9 @@ function addToWishList(productId) {
         
     }
     updateWishListUI();
+    removeItemFromWishList();
+
+    saveWishListToLocalStorage();
 }
 }
 
@@ -192,7 +243,7 @@ function updateWishListUI(){
         `
 
         wishListItems.appendChild(div)
-
+        
 
     });
     
@@ -209,8 +260,9 @@ addToWishListButtons.forEach(button => {
             heart.classList.remove("active-Heart")
         } else {
             heart.classList.add("active-Heart")
+            console.log(parseInt(heart.getAttribute('data-heart-number')))
+        
         }
-        console.log(parseInt(heart.getAttribute('data-heart-number')))
         const productId = button.getAttribute('data-heart-number')
         addToWishList(parseInt(productId))
 
@@ -219,22 +271,6 @@ addToWishListButtons.forEach(button => {
 
 
 
-function heartUI(productId){
-    let wishListHeartContainers = document.querySelectorAll(".wishList")
-    wishListHeartContainers.forEach(heartContainer => {
-        heartContainer.addEventListener("click", () => {
-            let heart = heartContainer.querySelector("svg > g > path")
-            let heartAttribute = heartContainer.getAttribute("data-heart-number")
-            if(parseInt(heartAttribute) == productId){
-                heart.classList.add("active-Heart")
-                
-            }else {
-                heart.classList.remove("active-Heart")
-            }
-        })
-        
-    })
-}
 
 
 
@@ -257,3 +293,34 @@ prodCard.forEach(card => {
         }
     })
 })
+
+
+prodName.forEach(name => {
+    name.addEventListener("click", () => {
+        const nameNumber = parseInt(name.getAttribute("data-heart-number"))
+        switch(nameNumber){
+            case 7: location.href = "swirling.html"
+            break ;
+        }
+    })
+})
+
+
+
+
+
+function removeItemFromWishList(){
+  const removeCardBtn = document.querySelectorAll(".removeCardBtn")
+  removeCardBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+  const btnIndex = parseInt(btn.getAttribute("data-heart-number"))
+  const itemCard = btn.closest(".wishList-container-prod")
+  const heartNum = document.querySelector(`.wishList svg path[data-heart-number="${btnIndex}"]`);
+    heartNum.classList.remove("active-Heart")
+    itemCard.remove()
+    const existingItemIndex = wishListJs.findIndex(item => item.id === btnIndex);
+    wishListJs.splice(existingItemIndex, 1)
+    saveWishListToLocalStorage()
+})
+})
+}

@@ -22,6 +22,7 @@ let unselected = document.querySelectorAll(".imgUnselectedProd")
 let selected = document.querySelectorAll(".imgSelectedProd")
 let onHoverCard = document.querySelectorAll(".onHoverCard")
 let fifthSection = document.querySelector("#fifth-Section")
+let removeCardBtn = document.querySelectorAll(".removeCardBtn")
 
 
 
@@ -654,6 +655,8 @@ wishListContainerHideBtn.addEventListener("click", () => {
     wishListContainer.style.display = "none"
 })
 
+
+
 shoppingCartContainerShowBtn.addEventListener("click", () => {
     shoppingCartContainer.style.display = "flex"
 })
@@ -863,67 +866,78 @@ const products = [
         id: 0,
         name: "Pearl Earrings",
         price: "1500 AED",
-        image: 'images/Component 4 – 1.png'
+        image: 'images/Component 4 – 1.png',
+        quantity: 0
     },
     {
         id: 1,
         name: "Elegance Band",
         price: "1500 AED",
-        image: 'images/Component 3 – 1.png'
+        image: 'images/Component 3 – 1.png',
+        quantity: 0
     },
     {
         id: 2,
         name: "Deux Pearl Earrings",
         price: "1500 AED",
-        image: 'images/Component 2 – 1.png'
+        image: 'images/Component 2 – 1.png',
+        quantity: 0
     },
     {
         id: 3,
         name: "Amavi",
         price: "1500 AED",
-        image: 'images/Component 5 – 1.png'
+        image: 'images/Component 5 – 1.png',
+        quantity: 0
     },
     {
         id: 4,
         name: "Vermeil",
         price: "1500 AED",
-        image: 'images/Component 6 – 1.png'
+        image: 'images/Component 6 – 1.png',
+        quantity: 0
     },
     {
         id: 5,
         name: "Sphere Earrings",
         price: "1500 AED",
-        image: 'images/Image 25.png'
+        image: 'images/Image 25.png',
+        quantity: 0
     },
     {
         id: 6,
         name: "Ivory",
         price: "1500 AED",
-        image: 'images/new/Image 12.png'
+        image: 'images/new/Image 12.png',
+        quantity: 0
     },
     {
         id: 7,
         name: "Swirling",
         price: "1500 AED",
-        image: 'images/new/Image 17.png'
+        image: 'images/new/Image 17.png',
+        quantity: 0
     },
     {
         id: 8,
         name: "Chain Necklace",
         price: "1500 AED",
-        image: 'images/Image 26.png'
+        image: 'images/Image 26.png',
+        quantity: 0
     },
     {
         id: 9,
         name: "Intaglio Dove Necklace",
         price: "1500 AED",
-        image: 'images/Image 27.png'
+        image: 'images/Image 27.png',
+        quantity: 0
     },
     {
         id: 10,
         name: "Braided Bracelet",
         price: "2000 AED",
-        image: 'images/Image 28.png'
+        image: 'images/Image 28.png',
+        quantity: 0
     }
 ]
 
@@ -932,9 +946,47 @@ let wishListJs = []
 let wishListItems = document.querySelector(".wishList-cardsContainer")
 
 
+
+window.addEventListener('load', () => {
+  const savedWishList = localStorage.getItem('wishlist')
+  if (savedWishList) {
+      wishListJs = JSON.parse(savedWishList);
+      updateWishListUI();
+      checkIfWishList()
+      removeItemFromWishList();
+
+  }
+})
+
+
+function checkIfWishList(){
+  const hearts = document.querySelectorAll(".wishList svg > g > path");
+  console.log(hearts)
+  
+  wishListJs.forEach(item => {
+    
+    hearts.forEach(heart => {
+      console.log(item)
+      if(parseInt(heart.getAttribute("data-heart-number")) == item.id){
+        heart.classList.add("active-Heart")
+      }
+      
+     
+    })
+  })
+  
+}
+
+
+function saveWishListToLocalStorage() {
+  localStorage.setItem('wishlist', JSON.stringify(wishListJs))
+}
+
+
+
+
 function addToWishList(productId) {
     let product = products.find(item => item.id === productId);
-    
     if (product) {
         const existingItemIndex = wishListJs.findIndex(item => item.id === productId);
         
@@ -956,6 +1008,9 @@ function addToWishList(productId) {
         
     }
     updateWishListUI();
+    removeItemFromWishList();
+
+    saveWishListToLocalStorage();
 }
 }
 
@@ -1005,7 +1060,7 @@ function updateWishListUI(){
         `
 
         wishListItems.appendChild(div)
-
+        
 
     });
     
@@ -1020,10 +1075,12 @@ addToWishListButtons.forEach(button => {
         let heart = button.querySelector("svg > g > path")
         if(heart.classList.contains("active-Heart")) {
             heart.classList.remove("active-Heart")
+
         } else {
             heart.classList.add("active-Heart")
+            console.log(parseInt(heart.getAttribute('data-heart-number')))
+        
         }
-        console.log(parseInt(heart.getAttribute('data-heart-number')))
         const productId = button.getAttribute('data-heart-number')
         addToWishList(parseInt(productId))
 
@@ -1032,22 +1089,6 @@ addToWishListButtons.forEach(button => {
 
 
 
-function heartUI(productId){
-    let wishListHeartContainers = document.querySelectorAll(".wishList")
-    wishListHeartContainers.forEach(heartContainer => {
-        heartContainer.addEventListener("click", () => {
-            let heart = heartContainer.querySelector("svg > g > path")
-            let heartAttribute = heartContainer.getAttribute("data-heart-number")
-            if(parseInt(heartAttribute) == productId){
-                heart.classList.add("active-Heart")
-                
-            }else {
-                heart.classList.remove("active-Heart")
-            }
-        })
-        
-    })
-}
 
 
 
@@ -1086,6 +1127,21 @@ prodName.forEach(name => {
 
 
 
+function removeItemFromWishList(){
+  const removeCardBtn = document.querySelectorAll(".removeCardBtn")
+  removeCardBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+  const btnIndex = parseInt(btn.getAttribute("data-heart-number"))
+  const itemCard = btn.closest(".wishList-container-prod")
+  const heartNum = document.querySelector(`.wishList svg path[data-heart-number="${btnIndex}"]`);
+    heartNum.classList.remove("active-Heart")
+    itemCard.remove()
+    const existingItemIndex = wishListJs.findIndex(item => item.id === btnIndex);
+    wishListJs.splice(existingItemIndex, 1)
+    saveWishListToLocalStorage()
+})
+})
+}
 
 
 
@@ -1094,3 +1150,218 @@ prodName.forEach(name => {
 
 
 
+
+
+
+
+
+
+
+let navBarItemsCount = document.querySelector(".navbar-itemsInCart")
+navBarItemsCount.addEventListener("click", () => {
+  shoppingCartContainer.style.display = "flex"
+})
+
+
+let shoppingCartJs = []
+let numOfItemsInCart = 0
+let cartTotalPrice = 0
+let shoppingCartItems = document.querySelector(".shoppingCart-cardsContainer")
+
+
+
+window.addEventListener('load', () => {
+  const savedShoppingCart = localStorage.getItem('shoppingCart');
+  if (savedShoppingCart) {
+    shoppingCartJs = JSON.parse(savedShoppingCart);
+    updateShoppingCart();
+    numberOfItemsInShoppingCart();
+    quantityControl();
+    sumOfPrice();
+  }
+});
+
+
+function saveShoppingCartToLocalStorage() {
+  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCartJs));
+}
+
+
+
+function addToShoppingCart(productId){
+  const product = products.find(item => item.id === productId);
+    console.log(product)
+    if (product){
+      console.log("product exists")
+
+        product.quantity++
+
+        const existingCartItem = shoppingCartJs.find(item => item.id === productId)
+        
+        if(existingCartItem){
+          existingCartItem.quantity = product.quantity;
+        } else {
+          
+          shoppingCartJs.push({
+            id:productId,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: product.quantity
+
+            
+        })
+        }
+        
+        updateShoppingCart();
+        quantityControl();
+        numberOfItemsInShoppingCart()
+        sumOfPrice()
+
+        saveShoppingCartToLocalStorage()
+    }  
+
+    
+
+    
+    
+    
+
+}
+
+
+function updateShoppingCart(){
+    shoppingCartItems.innerHTML = ""
+    
+    shoppingCartJs.forEach(item => {
+      
+        const div = document.createElement('div')
+        div.className = "shoppingCart-container-prod card"
+        div.setAttribute("data-heart-number", `${item.id}`)
+        div.innerHTML = `
+        <div class="card-body">
+        <div class="shoppingCart-prod-left-container">
+          <img class="shoppingCart-prodImg" src="${item.image}" alt="">
+          <div class="shoppingCart-prod-left-innerContainer">
+            <div class="card-title">${item.name}</div>
+            <div class="shoppingCartProdQuantity">Quantity<span class="SCPQ-Subtract">-</span><span class="SCPQ-Number">${item.quantity}</span><span class="SCPQ-add">+</span></div>
+          </div>
+        </div>
+        <div class="shoppingCart-prod-right-container">
+        
+          <svg class="shoppingCart-prod-menu" xmlns="http://www.w3.org/2000/svg" width="5" height="21" viewBox="0 0 5 21">
+            <g id="Group_225" data-name="Group 225" transform="translate(-1851 -132)">
+              <circle id="Ellipse_3" data-name="Ellipse 3" cx="2.5" cy="2.5" r="2.5" transform="translate(1851 132)" fill="#1a1a1a"></circle>
+              <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.5" cy="2.5" r="2.5" transform="translate(1851 140)" fill="#1a1a1a"></circle>
+              <circle id="Ellipse_5" data-name="Ellipse 5" cx="2.5" cy="2.5" r="2.5" transform="translate(1851 148)" fill="#1a1a1a"></circle>
+            </g>
+          </svg>
+          
+        
+
+        <div class="card-price">${item.price}</div>
+      </div>
+    </div>`
+
+    shoppingCartItems.appendChild(div)
+    })
+}
+
+
+let addToShoppingCartButtons = document.querySelectorAll(".card-body .myBtn")
+
+addToShoppingCartButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const productId = button.closest(".card-body").getAttribute("data-heart-number")
+        addToShoppingCart(parseInt(productId))
+    })
+})
+
+
+
+function quantityControl(){
+const subtractQuantityButton = document.querySelectorAll(".SCPQ-Subtract")
+const addQuantityButton = document.querySelectorAll(".SCPQ-add")
+
+  addQuantityButton.forEach(button => { 
+    
+    button.addEventListener("click", () => {
+      
+      const productId = button.closest(".shoppingCart-container-prod").getAttribute("data-heart-number")
+      
+      const product = shoppingCartJs.find(item => item.id === parseInt(productId))
+      
+      product.quantity++
+      let quantity = button.closest(".shoppingCart-container-prod").querySelector(".SCPQ-Number")
+      
+      quantity.innerText = product.quantity
+      numberOfItemsInShoppingCart()
+      sumOfPrice()
+      saveShoppingCartToLocalStorage()
+    })
+
+    
+
+  })
+
+  subtractQuantityButton.forEach(button => {
+    button.addEventListener("click", () => {
+      const productId = button.closest(".shoppingCart-container-prod").getAttribute("data-heart-number")
+      
+      const product = shoppingCartJs.find(item => item.id === parseInt(productId))
+      if(product.quantity > 1){
+        product.quantity--
+        let quantity = button.closest(".shoppingCart-container-prod").querySelector(".SCPQ-Number")
+         quantity.innerText = product.quantity
+         numberOfItemsInShoppingCart()
+         sumOfPrice()
+         saveShoppingCartToLocalStorage()
+      } else {
+        
+        const existingItemIndex = shoppingCartJs.findIndex(item => item.id === parseInt(productId));
+        shoppingCartJs.splice(existingItemIndex, 1)
+        button.closest(".shoppingCart-container-prod").remove()
+        numberOfItemsInShoppingCart()
+        sumOfPrice()
+        saveShoppingCartToLocalStorage()
+      }
+      
+    })
+    
+  })
+  
+}
+
+function numberOfItemsInShoppingCart(){
+  numOfItemsInCart = 0
+  
+  let shoppingCartItemsCount = document.querySelector(".items-count")
+  if(shoppingCartJs[0]){
+    shoppingCartJs.forEach(item => {
+
+  
+      console.log(item.quantity)
+      numOfItemsInCart += parseInt(item.quantity)
+    
+      navBarItemsCount.innerText = numOfItemsInCart
+      shoppingCartItemsCount.innerText = `${numOfItemsInCart} Items`
+    })
+  } else {
+    navBarItemsCount.innerText = 0
+      shoppingCartItemsCount.innerText = `0 Items`
+  }
+
+}
+
+function sumOfPrice() {
+  cartTotalPrice = 0
+  let shoppingCartTotalPrice = document.querySelector(".shoppingCart-totalPrice")
+  if(shoppingCartJs[0]){
+    shoppingCartJs.forEach(item => {
+      cartTotalPrice += (parseInt(item.price) * item.quantity  )
+      shoppingCartTotalPrice.innerText = `${cartTotalPrice} AED`
+    })
+  } else {
+    shoppingCartTotalPrice.innerText = `0 AED`
+  }
+}
