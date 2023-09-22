@@ -715,6 +715,7 @@ unselected.forEach((icon, index) => {
 
 let secondSecWishlist = document.querySelector(".secondSecWishList")
 let seconcSecWishlistHeart = secondSecWishlist.querySelector("svg > g > path")
+let prodAddToCartButton = document.querySelector(".prod-addtocart")
 
 prodSlider.forEach(slider => {
     slider.addEventListener("click", () => {
@@ -728,6 +729,7 @@ prodSlider.forEach(slider => {
                       secondSecRImg[0].src = "images/onHover/Mask Group 25.png"
                       prodName[0].innerText = "Sphere Earrings"
                       prodPrice[0].innerText = "1500 AED"
+                      prodAddToCartButton.setAttribute("data-product-number", "5")
                       selectedProd.forEach(point => {
                         point.style.opacity = 0
                       })
@@ -751,6 +753,7 @@ prodSlider.forEach(slider => {
                       secondSecRImg[0].src = "images/new/Mask Group 16.png"
                       prodName[0].innerText = "Ivory"
                       prodPrice[0].innerText = "1500 AED"
+                      prodAddToCartButton.setAttribute("data-product-number", "6")
                       prodSlider[0].classList.remove("active-slider")
                       prodSlider[2].classList.remove("active-slider")
                       prodSlider[1].classList.add("active-slider")
@@ -767,6 +770,7 @@ prodSlider.forEach(slider => {
             secondSecRImg[0].src = "images/new/Mask Group 17.png"
             prodName[0].innerText = "Swirling"
             prodPrice[0].innerText = "1500 AED"
+            prodAddToCartButton.setAttribute("data-product-number", "7")
             prodSlider[0].classList.remove("active-slider")
             prodSlider[1].classList.remove("active-slider")
             prodSlider[2].classList.add("active-slider")
@@ -1139,10 +1143,21 @@ function removeItemFromWishList(){
     const existingItemIndex = wishListJs.findIndex(item => item.id === btnIndex);
     wishListJs.splice(existingItemIndex, 1)
     saveWishListToLocalStorage()
+    checkIfWishListEmpty()
 })
 })
 }
 
+
+function checkIfWishListEmpty(){
+  if(wishListJs.length == 0){
+    wishListItems.innerHTML = `<div style="
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+">Wishlist is Empty</div>`
+  }
+}
 
 
 
@@ -1190,16 +1205,15 @@ function saveShoppingCartToLocalStorage() {
 
 function addToShoppingCart(productId){
   const product = products.find(item => item.id === productId);
+  const productJs = shoppingCartJs.find(item => item.id === productId)
     console.log(product)
-    if (product){
-      console.log("product exists")
+    if (products){
 
-        product.quantity++
 
         const existingCartItem = shoppingCartJs.find(item => item.id === productId)
         
         if(existingCartItem){
-          existingCartItem.quantity = product.quantity;
+          existingCartItem.quantity++;
         } else {
           
           shoppingCartJs.push({
@@ -1207,7 +1221,7 @@ function addToShoppingCart(productId){
             name: product.name,
             price: product.price,
             image: product.image,
-            quantity: product.quantity
+            quantity: 1
 
             
         })
@@ -1269,12 +1283,27 @@ function updateShoppingCart(){
 
 
 let addToShoppingCartButtons = document.querySelectorAll(".card-body .myBtn")
+let onHoverCardsAddToCartButtons = document.querySelectorAll(".onHoverCard .btn")
 
 addToShoppingCartButtons.forEach(button => {
     button.addEventListener("click", () => {
         const productId = button.closest(".card-body").getAttribute("data-heart-number")
         addToShoppingCart(parseInt(productId))
     })
+})
+
+onHoverCardsAddToCartButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const productId = button.getAttribute("data-product-number")
+    addToShoppingCart(parseInt(productId))
+  })
+})
+
+
+
+prodAddToCartButton.addEventListener("click", () => {
+  const productId = prodAddToCartButton.getAttribute("data-product-number")
+  addToShoppingCart(parseInt(productId))
 })
 
 
@@ -1347,7 +1376,7 @@ function numberOfItemsInShoppingCart(){
       shoppingCartItemsCount.innerText = `${numOfItemsInCart} Items`
     })
   } else {
-    navBarItemsCount.innerText = 0
+    navBarItemsCount.innerText = ``
       shoppingCartItemsCount.innerText = `0 Items`
   }
 

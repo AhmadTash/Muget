@@ -38,12 +38,12 @@ function addToShoppingCart(productId){
     if (product){
       console.log("product exists")
 
-        product.quantity++
+        
 
         const existingCartItem = shoppingCartJs.find(item => item.id === productId)
         
         if(existingCartItem){
-          existingCartItem.quantity = product.quantity;
+          existingCartItem.quantity++;
         } else {
           
           shoppingCartJs.push({
@@ -51,7 +51,7 @@ function addToShoppingCart(productId){
             name: product.name,
             price: product.price,
             image: product.image,
-            quantity: product.quantity
+            quantity: 1
 
             
         })
@@ -113,12 +113,21 @@ function updateShoppingCart(){
 
 
 let addToShoppingCartButtons = document.querySelectorAll(".card-body .myBtn")
+let addToShoppingCartButtonsProdPage = document.querySelectorAll(".prodPage-addToCart")
 
 addToShoppingCartButtons.forEach(button => {
     button.addEventListener("click", () => {
         const productId = button.closest(".card-body").getAttribute("data-heart-number")
         addToShoppingCart(parseInt(productId))
     })
+})
+
+
+addToShoppingCartButtonsProdPage.forEach(button => {
+  button.addEventListener("click", () => {
+    const productId = button.getAttribute("data-product-number")
+    addToShoppingCart(parseInt(productId))
+})
 })
 
 
@@ -191,7 +200,7 @@ function numberOfItemsInShoppingCart(){
       shoppingCartItemsCount.innerText = `${numOfItemsInCart} Items`
     })
   } else {
-    navBarItemsCount.innerText = 0
+    navBarItemsCount.innerText = ``
       shoppingCartItemsCount.innerText = `0 Items`
   }
 
